@@ -34,7 +34,7 @@ class Table extends Component {
     render() {
         const { resultData } = this.props
         return (
-            <table>
+            <table className="table table-striped">
                 <TableHeader />
                 <TableBody resultData={resultData} />
             </table>
