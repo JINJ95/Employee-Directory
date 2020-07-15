@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const TableHeader = () => {
     return (
@@ -30,16 +30,16 @@ const TableBody = (props) => {
     return <tbody>{rows}</tbody>
 }
 
-class Table extends Component {
-    render() {
-        const { resultData } = this.props
-        return (
-            <table className="table table-striped">
-                <TableHeader />
-                <TableBody resultData={resultData} />
-            </table>
-        )
-    }
+
+const Table = (props) => {
+    const { resultData } = props
+
+    return (
+        <table className="table table-striped">
+            <TableHeader />
+            <TableBody resultData={resultData} />
+        </table>
+    )
 }
 
 export default Table
