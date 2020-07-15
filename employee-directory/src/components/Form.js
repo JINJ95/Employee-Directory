@@ -1,41 +1,20 @@
-import React, { Component } from 'react'
+import React, { useState } from "react";
 
-class Form extends Component {
-    initialState = {
-        name: '',
-    }
+const Form = () => {
+    const [name, setName] = useState();
 
-    state = this.initialState
-
-
-    handleChange = (event) => {
-        const { name, value } = event.target
-
-        this.setState({
-            [name]: value,
-        })
-    }
-
-    submitForm = () => {
-        this.props.handleSubmit(this.state)
-        this.setState(this.initialState)
-    }
-
-    render() {
-        const { name } = this.state;
-
-        return (
-            <form>
-                <label htmlFor="name">Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    value={name}
-                    onChange={this.handleChange} />
-                <input type="button" value="Submit" onClick={this.submitForm} />
-            </form>
-        );
-    }
+    return (
+        <form>
+            <label htmlFor="name">Search:</label>
+            <span> </span>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter Name"
+                value={name}
+                onChange={e => setName(e.target.value)} />
+        </form>
+    );
 }
 export default Form;

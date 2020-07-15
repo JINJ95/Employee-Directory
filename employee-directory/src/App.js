@@ -7,7 +7,6 @@ import Form from './components/Form'
 class App extends Component {
     state = {
         results: [],
-        searchedName: "",
     };
 
     componentDidMount() {
@@ -21,16 +20,12 @@ class App extends Component {
             .catch(err => console.log(err));
     };
 
-    handleSubmit = (name) => {
-        this.setState({ searchedName: name.name })
-    }
-
     render() {
         const { results } = this.state
 
         return (
             <div className="container">
-                <Form handleSubmit={this.handleSubmit}/>
+                <Form />
                 <Table resultData={results}/>
             </div>
         )
