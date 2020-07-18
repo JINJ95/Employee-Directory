@@ -21,10 +21,16 @@ class App extends Component {
     };
 
     setName = (e) => {
-        let tempResults = this.state.results.filter(emp => { return emp.name.first.includes(e) || emp.name.last.includes(e)} )
-        this.setState({...this.state, name:e, filteredResults: tempResults});
+        let tempResults = this.state.results.filter(emp => { return emp.name.first.includes(e) || emp.name.last.includes(e) })
+        this.setState({ ...this.state, name: e, filteredResults: tempResults });
         // console.log(this.state.filteredResults);
 
+    }
+
+    sortResults = () => {
+        let results = this.state.filteredResults;
+        let sortedResults = results.sort((a,b) => (a.name.first > b.name.first) ? 1 : -1); 
+        this.setState({ ...this.state, filteredResults: sortedResults });
     }
 
     render() {
@@ -42,6 +48,9 @@ class App extends Component {
                         placeholder="Enter Name"
                         value={this.state.name}
                         onChange={e => this.setName(e.target.value)} />
+                        <button type="button" className="btn btn-secondary"
+                        onClick={e => this.sortResults()}
+                        >Sort</button>
                 </form>
                 <Table resultData={filteredResults} />
             </div>
