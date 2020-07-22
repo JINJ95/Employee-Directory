@@ -29,7 +29,7 @@ class App extends Component {
 
     sortResults = () => {
         let results = this.state.filteredResults;
-        let sortedResults = results.sort((a,b) => (a.name.first > b.name.first) ? 1 : -1); 
+        let sortedResults = results.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1);
         this.setState({ ...this.state, filteredResults: sortedResults });
     }
 
@@ -38,20 +38,24 @@ class App extends Component {
 
         return (
             <div className="container">
-                <form>
-                    <label htmlFor="name">Search:</label>
-                    <span> </span>
-                    <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Enter Name"
-                        value={this.state.name}
-                        onChange={e => this.setName(e.target.value)} />
-                        <button type="button" className="btn btn-secondary"
+                <nav class="navbar navbar-light bg-light">
+                    <form>
+                        <label htmlFor="name">Search:</label>
+                        <span> </span>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Enter Name"
+                            value={this.state.name}
+                            onChange={e => this.setName(e.target.value)} />
+                    </form>
+                <div className="float-right">
+                    <button type="button" className="btn btn-secondary"
                         onClick={e => this.sortResults()}
-                        >Sort</button>
-                </form>
+                    >Sort Alphabetically</button>
+                </div>
+                </nav>
                 <Table resultData={filteredResults} />
             </div>
         )
