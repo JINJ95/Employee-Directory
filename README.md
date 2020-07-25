@@ -16,7 +16,7 @@ This is an Awesome README Generator!
 
 <h1>Installation</h1>
 
-<strong>Technologies: </strong>
+<strong>Technologies: React</strong>
 <h2>Clone or Download</h2>
 <ul>
 <li>Clone or download this repo to your local machine</li>
