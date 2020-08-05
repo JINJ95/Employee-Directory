@@ -2,8 +2,7 @@
 
 # Employee-Directory
 An employee directory capable of filtering and using React.
-
-This is an Awesome README Generator!
+https://jinj95.github.io/Employee-Directory/
 <h1>Table of Contents</h1>
 
 <ul>
@@ -25,13 +24,9 @@ This is an Awesome README Generator!
 <ul>
   <li> In your terminal navigate into the root directory of the project folder.</li>
   <li> Use this command to download packages:<code>npm i</code></li>
-  <li> Use this command to download axios:<code>npm i axios</code></li>
+  <li> Run it <code>npm i</code> </li>
 </ul>
 
-<h2>Run it!</h2>
-<ul>
-<li>Run the application by entering <code>npm start</code></li>
-</ul>
 
 <h1>Usage</h1>
 
